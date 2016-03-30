@@ -5,8 +5,9 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>汉字到拼音</title>
-</head>
 <link rel="stylesheet" type="text/css" href="pinyin.css">
+</head>
+
 
 <body>
     <input type="text" placeholder="输入汉字" id="pyText" onchange="textchanged();">
@@ -21,6 +22,7 @@
         var text = document.getElementById("pyText").value;
         var pys = getPinyin(text);
         show(pys);
+        console.info(pys);
     }
 
     function getPinyin(text) {
