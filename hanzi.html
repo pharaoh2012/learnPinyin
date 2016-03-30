@@ -5,19 +5,28 @@
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>汉字到拼音</title>
+
 </head>
 <link rel="stylesheet" type="text/css" href="pinyin.css">
 
 <body>
-    <input type="text" placeholder="输入汉字" id="pyText" onchange="textchanged();">
-    <div id="pySelect"></div>
-    <div id="pyShow"></div>
-    <audio id="pymp3" src=""></audio>
+
+    <nav>
+        <a class="nav-link" href="hanzi.html">汉字学习</a>
+        <a class="nav-link" href="pinyin.html">拼音学习</a>
+    </nav>
+
+    <div class="container">
+        <input type="text" placeholder="在此处输入要学习的汉字" id="pyText" onchange="textchanged();" onkeyup="textchanged();">
+        <div id="pySelect"></div>
+        <div id="pyShow"></div>
+        <audio id="pymp3" src=""></audio>
+    </div>
     <script src="pydic.js"></script>
     <script src="pymp3.js"></script>
     <script src="query.js"></script>
     <script type="text/javascript">
-    function textchanged() {
+        function textchanged() {
         var text = document.getElementById("pyText").value;
         var pys = getPinyin(text);
         show(pys);
