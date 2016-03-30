@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html manifest="pinyin.manifest">
+
+<head>
+    <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>汉字到拼音</title>
+</head>
+<link rel="stylesheet" type="text/css" href="pinyin.css">
+
+<body>
+    <input type="text" placeholder="输入汉字" id="pyText" onchange="textchanged();">
+    <div id="pySelect"></div>
+    <div id="pyShow"></div>
+    <audio id="pymp3" src=""></audio>
+    <script src="pydic.js"></script>
+    <script src="pymp3.js"></script>
+    <script src="query.js"></script>
+    <script type="text/javascript">
+    function textchanged() {
+        var text = document.getElementById("pyText").value;
+        var pys = getPinyin(text);
+        show(pys);
+    }
+
+    function getPinyin(text) {
+        var ret = [];
+        for (var i = 0; i < text.length; i++) {
+            var py = pyDic[text[i]];
+            if (py) {
+                ret.push(py);
+            }
+        }
+        return ret;
+    }
+    </script>
+</body>
+
+</html>
