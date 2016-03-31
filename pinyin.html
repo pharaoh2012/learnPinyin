@@ -9,84 +9,92 @@
 <link rel="stylesheet" type="text/css" href="pinyin.css">
 
 <body>
-    <select id="shenmu" onchange="pyChanged();">
-        <option value=''>声母</option>
-        <option value='#'> </option>
-        <option value='b'>b</option>
-        <option value='p'>p</option>
-        <option value='m'>m</option>
-        <option value='f'>f</option>
-        <option value='d'>d</option>
-        <option value='t'>t</option>
-        <option value='n'>n</option>
-        <option value='l'>l</option>
-        <option value='g'>g</option>
-        <option value='k'>k</option>
-        <option value='h'>h</option>
-        <option value='j'>j</option>
-        <option value='q'>q</option>
-        <option value='x'>x</option>
-        <option value='zh'>zh</option>
-        <option value='ch'>ch</option>
-        <option value='sh'>sh</option>
-        <option value='r'>r</option>
-        <option value='z'>z</option>
-        <option value='c'>c</option>
-        <option value='s'>s</option>
-        <option value='y'>y</option>
-        <option value='w'>w</option>
-    </select>
-    <select id="yunmu" onchange="pyChanged();">
-        <option value=''>韵母</option>
-        <option value='a'>a</option>
-        <option value='o'>o</option>
-        <option value='e'>e</option>
-        <option value='i'>i</option>
-        <option value='u'>u</option>
-        <option value='ü'>ü</option>
-        <option value='ai'>ai</option>
-        <option value='ei'>ei</option>
-        <option value='ui'>ui</option>
-        <option value='ao'>ao</option>
-        <option value='ou'>ou</option>
-        <option value='iu'>iu</option>
-        <option value='ie'>ie</option>
-        <option value='ue'>ue</option>
-        <option value='er'>er</option>
-        <option value='an'>an</option>
-        <option value='en'>en</option>
-        <option value='in'>in</option>
-        <option value='un'>un</option>
-        <option value='ang'>ang</option>
-        <option value='eng'>eng</option>
-        <option value='ing'>ing</option>
-        <option value='ong'>ong</option>
-        <option value='ian'>ian</option>
-        <option value='iao'>iao</option>
-        <option value='uai'>uai</option>
-        <option value='uan'>uan</option>
-        <option value='uang'>uang</option>
-        <option value='uo'>uo</option>
-        <option value='ia'>ia</option>
-        <option value='ua'>ua</option>
-        <option value='iang'>iang</option>
-        <option value='iong'>iong</option>
-    </select>
-    <select id="shendiao" onchange="pyChanged();">
-        <option value=''>声调</option>
-        <option value='0'> </option>
-        <option value='1'>ˉ</option>
-        <option value='2'>ˊ</option>
-        <option value='3'>ˇ</option>
-        <option value='4'>ˋ</option>
-    </select>
-    <div id="pySelect"></div>
-    <div id="pyShow"></div>
-    <audio id="pymp3" src=""></audio>
+    <nav>
+        <a class="nav-link" href="hanzi.html">汉字学习</a>
+        <a class="nav-link" href="pinyin.html">拼音学习</a>
+    </nav>
+
+    <div class="container">
+        <select id="shenmu" onchange="pyChanged();">
+            <option value=''>声母</option>
+            <option value='#'> </option>
+            <option value='b'>b</option>
+            <option value='p'>p</option>
+            <option value='m'>m</option>
+            <option value='f'>f</option>
+            <option value='d'>d</option>
+            <option value='t'>t</option>
+            <option value='n'>n</option>
+            <option value='l'>l</option>
+            <option value='g'>g</option>
+            <option value='k'>k</option>
+            <option value='h'>h</option>
+            <option value='j'>j</option>
+            <option value='q'>q</option>
+            <option value='x'>x</option>
+            <option value='zh'>zh</option>
+            <option value='ch'>ch</option>
+            <option value='sh'>sh</option>
+            <option value='r'>r</option>
+            <option value='z'>z</option>
+            <option value='c'>c</option>
+            <option value='s'>s</option>
+            <option value='y'>y</option>
+            <option value='w'>w</option>
+        </select>
+        <select id="yunmu" onchange="pyChanged();">
+            <option value=''>韵母</option>
+            <option value='a'>a</option>
+            <option value='o'>o</option>
+            <option value='e'>e</option>
+            <option value='i'>i</option>
+            <option value='u'>u</option>
+            <option value='ü'>ü</option>
+            <option value='ai'>ai</option>
+            <option value='ei'>ei</option>
+            <option value='ui'>ui</option>
+            <option value='ao'>ao</option>
+            <option value='ou'>ou</option>
+            <option value='iu'>iu</option>
+            <option value='ie'>ie</option>
+            <option value='ue'>ue</option>
+            <option value='er'>er</option>
+            <option value='an'>an</option>
+            <option value='en'>en</option>
+            <option value='in'>in</option>
+            <option value='un'>un</option>
+            <option value='ang'>ang</option>
+            <option value='eng'>eng</option>
+            <option value='ing'>ing</option>
+            <option value='ong'>ong</option>
+            <option value='ian'>ian</option>
+            <option value='iao'>iao</option>
+            <option value='uai'>uai</option>
+            <option value='uan'>uan</option>
+            <option value='uang'>uang</option>
+            <option value='uo'>uo</option>
+            <option value='ia'>ia</option>
+            <option value='ua'>ua</option>
+            <option value='iang'>iang</option>
+            <option value='iong'>iong</option>
+        </select>
+        <select id="shendiao" onchange="pyChanged();">
+            <option value=''>声调</option>
+            <option value='0'> </option>
+            <option value='1'>ˉ</option>
+            <option value='2'>ˊ</option>
+            <option value='3'>ˇ</option>
+            <option value='4'>ˋ</option>
+        </select>
+        <div id="pySelect"></div>
+        <div id="pyShow"></div>
+        <audio id="pymp3" src=""></audio>
+    </div>
+
     <script src="pymp3.js"></script>
     <script src="query.js"></script>
     <script type="text/javascript">
-    function pyChanged() {
+        function pyChanged() {
         var sm = document.getElementById("shenmu").value;
         var ym = document.getElementById("yunmu").value;
         var sd = document.getElementById("shendiao").value;
